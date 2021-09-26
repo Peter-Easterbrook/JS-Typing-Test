@@ -51,12 +51,12 @@ function spellCheck() {
 
 // Start the timer:
 function start() {
-  let textEnterdLength = testArea.value.length;
-  if (textEnterdLength === 0 && !timerRunning) {
+  let textEnteredLength = testArea.value.length;
+  if (textEnteredLength === 0 && !timerRunning) {
     timerRunning = true;
     interval = setInterval(runTimer, 10);
   }
-  console.log(textEnterdLength);
+  console.log(textEnteredLength);
 }
 
 // Reset everything:

@@ -107,13 +107,14 @@ Layout
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  background: rgb(57, 115, 224);
-  background: linear-gradient(
-    0deg,
-    rgba(57, 115, 224, 1) 0%,
-    rgba(6, 20, 47, 1) 100%
-  );
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #08132a;
+  overflow: hidden;
+  z-index: -1;
   display: grid;
   place-content: center;
 }
@@ -150,7 +151,7 @@ body {
 
 .masthead h1 {
   text-align: center;
-  font-wight: 200;
+  font-weight: 400;
 }
 
 .intro {
@@ -211,10 +212,14 @@ body {
 #reset {
   padding: 0.5em 1em;
   font-size: 1.2em;
-  font-weight: bold;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 4px #000;
   color: #e95d0f;
-  background: white;
-  border: 10px solid #e95d0f;
+  background: #fffff7;
+  border: 5px solid #e95d0f;
+  transition: all 0.2s ease-out;
   border-radius: 0.5rem;
 }
 
@@ -222,22 +227,14 @@ body {
   color: white;
   background-color: #e95d0f;
 }
-
-@keyframes move {
-  100% {
-    transform: translate3d(0, 0, 1px) rotate(360deg);
-  }
+#reset:active {
+  box-shadow: none;
+  transform: scale(0.9);
+  box-shadow: inset 0 0 20px #fffff0;
 }
 
-.background {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: #08132a;
-  overflow: hidden;
-  z-index: -1;
+button:focus {
+  outline: none;
 }
 
 .background span {
@@ -432,4 +429,9 @@ body {
   animation-delay: -45s;
   transform-origin: -11vw -19vh;
   box-shadow: -40vmin 0 5.087392366081641vmin currentColor;
+}
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
 }
